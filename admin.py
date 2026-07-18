@@ -2,7 +2,9 @@ from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message
 
-from config import ADMIN_ID
+import os
+
+ADMIN_ID = int(os.getenv("ADMIN_ID", "0"))
 from aiogram import F
 from admin_keyboard import admin_menu
 

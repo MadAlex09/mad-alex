@@ -19,7 +19,9 @@ from keyboards import (
 )
 
 from database import add_booking, check_booking
-from config import ADMIN_ID
+import os
+
+ADMIN_ID = int(os.getenv("ADMIN_ID", "0"))
 
 
 router = Router()
