@@ -61,36 +61,38 @@ if WEBHOOK_URL:
 @app.route(WEBHOOK_PATH, methods=["POST"])
 def telegram_webhook():
 
-    try:
-        data = request.get_json()
+    print("📩 ПОЛУЧЕН TELEGRAM UPDATE")
 
-        update = Update.model_validate(data)
+    data = request.get_json()
 
-        future = asyncio.run_coroutine_threadsafe(
-            dp.feed_update(
-                bot,
-                update
-            ),
-            bot_loop
-        )
+    print("📦 DATA ПОЛУЧЕНА")
 
-        def show_error(future):
-            try:
-                future.result()
-            except Exception as error:
-                print("❌ ОШИБКА ОБРАБОТКИ TELEGRAM:")
-                print(error)
+    update = Update.model_validate(data)
 
-        future.add_done_callback(show_error)
+    print("✅ UPDATE СОЗДАН")
 
-        return "OK"
+    future = asyncio.run_coroutine_threadsafe(
+        dp.feed_update(bot, update),
+        bot_loop
+    )
 
-    except Exception as error:
+    print("🚀 UPDATE ОТПРАВЛЕН В AIROGRAM")
 
-        print("❌ ОШИБКА WEBHOOK:")
-        print(error)
+    def show_result(future):
 
-        return "OK"
+        try:
+            result = future.result()
+
+            print("✅ AIROGRAM ОБРАБОТАЛ UPDATE")
+
+        except Exception as error:
+
+            print("❌ ОШИБКА AIROGRAM:")
+            print(repr(error))
+
+    future.add_done_callback(show_result)
+
+    return "OK"
 
 
 # =========================
