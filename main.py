@@ -6,7 +6,8 @@ from aiogram.types import Message
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 
-from config import TOKEN
+TOKEN = os.getenv("BOT_TOKEN")
+
 from keyboards import main_menu, register_keyboard
 from register import user_exists, add_user, delete_user
 from booking import router as booking_router
