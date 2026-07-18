@@ -2,7 +2,6 @@ from flask import Flask, render_template, request
 import os
 import requests
 import asyncio
-import threading
 
 from main import bot, dp
 from aiogram.types import Update
@@ -18,23 +17,6 @@ WEBHOOK_PATH = "/telegram-webhook"
 WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
 
-# =========================
-# Отдельный event loop для бота
-# =========================
-
-bot_loop = asyncio.new_event_loop()
-
-
-def start_bot_loop():
-    asyncio.set_event_loop(bot_loop)
-    bot_loop.run_forever()
-
-
-threading.Thread(
-    target=start_bot_loop,
-    daemon=True
-).start()
-
 
 # =========================
 # Установка webhook
@@ -42,14 +24,11 @@ threading.Thread(
 
 if WEBHOOK_URL:
 
-    future = asyncio.run_coroutine_threadsafe(
+    asyncio.run(
         bot.set_webhook(
             url=WEBHOOK_URL + WEBHOOK_PATH
-        ),
-        bot_loop
+        )
     )
-
-    future.result()
 
     print("✅ Telegram webhook установлен")
 
@@ -65,23 +44,18 @@ def telegram_webhook():
 
     data = request.get_json()
 
-    print("📦 DATA ПОЛУЧЕНА")
-
     update = Update.model_validate(data)
 
-    print("✅ UPDATE СОЗДАН")
+    print("📦 UPDATE СОЗДАН")
 
-    future = asyncio.run_coroutine_threadsafe(
-        dp.feed_update(bot, update),
-        bot_loop
-    )
-
-    print("🚀 UPDATE ОТПРАВЛЕН В AIROGRAM")
-
-    def show_result(future):
+    async def process_update():
 
         try:
-            result = future.result()
+
+            await dp.feed_update(
+                bot,
+                update
+            )
 
             print("✅ AIROGRAM ОБРАБОТАЛ UPDATE")
 
@@ -90,7 +64,7 @@ def telegram_webhook():
             print("❌ ОШИБКА AIROGRAM:")
             print(repr(error))
 
-    future.add_done_callback(show_result)
+    asyncio.run(process_update())
 
     return "OK"
 
