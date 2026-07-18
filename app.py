@@ -61,19 +61,36 @@ if WEBHOOK_URL:
 @app.route(WEBHOOK_PATH, methods=["POST"])
 def telegram_webhook():
 
-    data = request.get_json()
+    try:
+        data = request.get_json()
 
-    update = Update.model_validate(data)
+        update = Update.model_validate(data)
 
-    asyncio.run_coroutine_threadsafe(
-        dp.feed_update(
-            bot,
-            update
-        ),
-        bot_loop
-    )
+        future = asyncio.run_coroutine_threadsafe(
+            dp.feed_update(
+                bot,
+                update
+            ),
+            bot_loop
+        )
 
-    return "OK"
+        def show_error(future):
+            try:
+                future.result()
+            except Exception as error:
+                print("❌ ОШИБКА ОБРАБОТКИ TELEGRAM:")
+                print(error)
+
+        future.add_done_callback(show_error)
+
+        return "OK"
+
+    except Exception as error:
+
+        print("❌ ОШИБКА WEBHOOK:")
+        print(error)
+
+        return "OK"
 
 
 # =========================
