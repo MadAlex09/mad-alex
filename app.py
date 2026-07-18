@@ -65,15 +65,13 @@ def telegram_webhook():
 
     update = Update.model_validate(data)
 
-    future = asyncio.run_coroutine_threadsafe(
+    asyncio.run_coroutine_threadsafe(
         dp.feed_update(
             bot,
             update
         ),
         bot_loop
     )
-
-    future.result()
 
     return "OK"
 
