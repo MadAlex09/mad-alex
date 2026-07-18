@@ -1,16 +1,17 @@
 from flask import Flask, render_template, request
 import os
+import requests
+
 
 app = Flask(__name__)
 
 
+BOT_TOKEN = os.getenv("8709000302:AAGklJSGXAZDDq5z_RTx14uHL2LQbjpB-Is")
+ADMIN_ID = "8103221216"
+
+
 @app.route("/", methods=["GET", "POST"])
 def home():
-
-    print("ТЕКУЩАЯ ПАПКА:", os.getcwd())
-    print("ФАЙЛЫ В ПАПКЕ:", os.listdir("."))
-    print("TEMPLATES EXISTS:", os.path.exists("templates"))
-    print("INDEX EXISTS:", os.path.exists("templates/index.html"))
 
     if request.method == "POST":
 
@@ -18,9 +19,28 @@ def home():
         contact = request.form.get("contact")
         message = request.form.get("message")
 
-        print("Имя:", name)
-        print("Контакт:", contact)
-        print("Сообщение:", message)
+        text = f"""
+🔔 НОВАЯ ЗАЯВКА С САЙТА
+
+👤 Имя: {name}
+
+📱 Контакт: {contact}
+
+💬 Сообщение:
+{message}
+"""
+
+        url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+
+        requests.post(
+            url,
+            data={
+                "chat_id": ADMIN_ID,
+                "text": text
+            }
+        )
+
+        print("Заявка отправлена в Telegram")
 
     return render_template("index.html")
 
