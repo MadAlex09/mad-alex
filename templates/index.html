@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MadAlex — Цифровые решения</title>/title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- НАВИГАЦИЯ -->
+
+<header class="header">
+
+    <div class="container header-content">
+
+        <a href="#" class="logo">
+            <span>[</span> MadAlex <span>]</span>
+        </a>
+
+        <nav class="navigation">
+
+            <a href="#home" class="active">Главная</a>
+
+            <a href="#services">Услуги</a>
+
+            <a href="#portfolio">Портфолио</a>
+
+            <a href="#prices">Цены</a>
+
+            <a href="#about">Обо мне</a>
+
+            <a href="#contacts">Контакты</a>
+
+        </nav>
+
+        <a href="#contacts" class="header-button">
+            Связаться со мной
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ГЛАВНЫЙ ЭКРАН -->
+
+<main>
+
+    <section class="hero" id="home">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <div class="small-label">
+                    ● Создаю цифровые решения
+                </div>
+
+                <h1>
+                    Создаю
+                    <span>цифровые решения</span>
+                    <br>
+
+                    Для вашего
+                    <span>бизнеса</span>
+                </h1>
+
+                <p>
+                    Разрабатываю Telegram-ботов, сайты и
+                    автоматизацию, которые помогают бизнесу
+                    экономить время и работать эффективнее.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#services" class="button primary-button">
+                        Мои услуги →
+                    </a>
+
+                    <a href="#portfolio" class="button secondary-button">
+                        Смотреть работы
+                    </a>
+
+                </div>
+
+                <div class="technologies">
+
+                    <span>🐍 Python</span>
+
+                    <span>✈️ Telegram API</span>
+
+                    <span>🗄️ SQLite</span>
+
+                    <span>🌐 HTML/CSS</span>
+
+                    <span>⚡ JavaScript</span>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <div class="code-window">
+
+                    <div class="window-top">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <div class="code-lines">
+
+                        <p><span>def</span> create_solution():</p>
+
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <span>return</span> "success"
+                        </p>
+
+                        <br>
+
+                        <p>
+                            <span>while</span> project:
+                        </p>
+
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            build_something_great()
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- УСЛУГИ -->
+
+    <section class="services section" id="services">
+
+        <div class="container">
+
+            <div class="section-label">
+                Что я делаю
+            </div>
+
+            <h2>
+                Мои услуги
+            </h2>
+
+            <p class="section-description">
+                Предлагаю решения для развития
+                вашего бизнеса
+            </p>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🤖
+                    </div>
+
+                    <h3>
+                        Telegram-боты
+                    </h3>
+
+                    <p>
+                        Разработка ботов любой сложности
+                        для автоматизации вашего бизнеса.
+                    </p>
+
+                    <a href="#contacts">
+                        От 5 000 ₽ →
+                    </a>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Веб-сайты
+                    </h3>
+
+                    <p>
+                        Создание современных сайтов
+                        для бизнеса и личного бренда.
+                    </p>
+
+                    <a href="#contacts">
+                        От 10 000 ₽ →
+                    </a>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🐍
+                    </div>
+
+                    <h3>
+                        Python-разработка
+                    </h3>
+
+                    <p>
+                        Программы, автоматизация
+                        и индивидуальные решения.
+                    </p>
+
+                    <a href="#contacts">
+                        От 3 000 ₽ →
+                    </a>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        ⚙️
+                    </div>
+
+                    <h3>
+                        Автоматизация
+                    </h3>
+
+                    <p>
+                        Оптимизация процессов
+                        и интеграция сервисов.
+                    </p>
+
+                    <a href="#contacts">
+                        От 3 000 ₽ →
+                    </a>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🗄️
+                    </div>
+
+                    <h3>
+                        Базы данных
+                    </h3>
+
+                    <p>
+                        Проектирование и разработка
+                        баз данных для проектов.
+                    </p>
+
+                    <a href="#contacts">
+                        От 1 500 ₽ →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ПОРТФОЛИО -->
+
+    <section class="portfolio section" id="portfolio">
+
+        <div class="container">
+
+            <div class="section-label">
+                Портфолио
+            </div>
+
+            <h2>
+                Мои работы
+            </h2>
+
+            <p class="section-description">
+                Проекты, которые я создаю
+            </p>
+
+            <div class="portfolio-grid">
+
+                <div class="portfolio-card">
+
+                    <div class="portfolio-image">
+                        🎮
+                    </div>
+
+                    <div class="portfolio-content">
+
+                        <div class="project-tag">
+                            Python • Telegram • SQLite
+                        </div>
+
+                        <h3>
+                            Система бронирования ПК-клуба
+                        </h3>
+
+                        <p>
+                            Telegram-бот для бронирования компьютеров
+                            и VIP-мест в компьютерном клубе.
+                        </p>
+
+                        <ul class="project-features">
+
+                            <li>✓ Регистрация пользователей</li>
+
+                            <li>✓ Бронирование ПК</li>
+
+                            <li>✓ VIP-зал</li>
+
+                            <li>✓ Выбор даты и времени</li>
+
+                            <li>✓ Проверка занятых мест</li>
+
+                            <li>✓ Уведомления администратора</li>
+
+                        </ul>
+
+                        <a href="#" class="project-link" id="open-project">
+
+                            Подробнее о проекте →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="portfolio-card">
+
+                    <div class="portfolio-image">
+                        💻
+                    </div>
+
+                    <h3>
+                        Сайт-портфолио
+                    </h3>
+
+                    <p>
+                        Современный сайт с красивым
+                        дизайном и анимациями.
+                    </p>
+
+                    <a href="#">
+                        Подробнее →
+                    </a>
+
+                </div>
+
+
+                <div class="portfolio-card">
+
+                    <div class="portfolio-image">
+                        📊
+                    </div>
+
+                    <h3>
+                        Автоматизация
+                    </h3>
+
+                    <p>
+                        Программы для автоматизации
+                        рутинных процессов.
+                    </p>
+
+                    <a href="#">
+                        Подробнее →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ЦЕНЫ -->
+
+    <section class="pricing section" id="prices">
+
+        <div class="container">
+
+            <div class="section-label">
+                Стоимость
+            </div>
+
+            <h2>
+                Цены на услуги
+            </h2>
+
+            <p class="section-description">
+                Выберите подходящий вариант или обсудите индивидуальный проект
+            </p>
+
+
+            <div class="pricing-grid">
+
+
+                <!-- TELEGRAM-БОТ -->
+
+                <div class="price-card">
+
+                    <div class="price-icon">
+                        🤖
+                    </div>
+
+                    <h3>
+                        Telegram-бот
+                    </h3>
+
+                    <p class="price-description">
+                        Бот для бизнеса, автоматизации
+                        и взаимодействия с клиентами.
+                    </p>
+
+                    <div class="price">
+                        от <strong>5 000 ₽</strong>
+                    </div>
+
+                    <ul>
+
+                        <li>✓ Регистрация пользователей</li>
+
+                        <li>✓ Кнопки и меню</li>
+
+                        <li>✓ Подключение базы данных</li>
+
+                        <li>✓ Индивидуальная логика</li>
+
+                    </ul>
+
+                    <a href="#contacts" class="button secondary-button">
+                        Обсудить проект
+                    </a>
+
+                </div>
+
+
+                <!-- САЙТ -->
+
+                <div class="price-card popular">
+
+                    <div class="popular-label">
+                        ПОПУЛЯРНО
+                    </div>
+
+                    <div class="price-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Современный сайт
+                    </h3>
+
+                    <p class="price-description">
+                        Красивый сайт для бизнеса,
+                        портфолио или личного бренда.
+                    </p>
+
+                    <div class="price">
+                        от <strong>10 000 ₽</strong>
+                    </div>
+
+                    <ul>
+
+                        <li>✓ Современный дизайн</li>
+
+                        <li>✓ Адаптация под телефон</li>
+
+                        <li>✓ Анимации</li>
+
+                        <li>✓ Форма обратной связи</li>
+
+                    </ul>
+
+                    <a href="https://t.me/MadAlex09"
+                       target="_blank"
+                       class="button primary-button">
+
+                        Обсудить проект
+
+                    </a>
+
+                </div>
+
+
+                <!-- ИНДИВИДУАЛЬНЫЙ ПРОЕКТ -->
+
+                <div class="price-card">
+
+                    <div class="price-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Индивидуальный проект
+                    </h3>
+
+                    <p class="price-description">
+                        Сложные проекты и решения
+                        под конкретные задачи.
+                    </p>
+
+                    <div class="price">
+                        <strong>Обсудим</strong>
+                    </div>
+
+                    <ul>
+
+                        <li>✓ Анализ задачи</li>
+
+                        <li>✓ Индивидуальная разработка</li>
+
+                        <li>✓ Интеграции</li>
+
+                        <li>✓ Поддержка проекта</li>
+
+                    </ul>
+
+                    <a href="https://t.me/MadAlex09"
+                       target="_blank"
+                       class="button secondary-button">
+
+                        Обсудить проект
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ОБО МНЕ -->
+
+    <section class="about section" id="about">
+
+        <div class="container about-content">
+
+            <div class="about-text">
+
+                <div class="section-label">
+                    Кто я
+                </div>
+
+                <h2>
+                    Создаю решения,
+                    которые работают
+                </h2>
+
+                <p>
+                    Я занимаюсь разработкой цифровых решений
+                    для бизнеса и частных клиентов.
+                </p>
+
+                <p>
+                    Создаю Telegram-ботов, сайты и программы
+                    на Python, а также автоматизирую различные
+                    процессы.
+                </p>
+
+                <p>
+                    Каждый проект создаю индивидуально,
+                    учитывая задачи и цели клиента.
+                </p>
+
+                <a href="https://t.me/MadAlex09"
+                   target="_blank"
+                   class="button secondary-button">
+
+                    Обсудить проект
+
+                </a>
+
+            </div>
+
+
+            <div class="about-stats">
+
+                <div class="stat-card">
+
+                    <strong>
+                        Python
+                    </strong>
+
+                    <span>
+                    Основной язык
+                </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <strong>
+                        Telegram
+                    </strong>
+
+                    <span>
+                    Разработка ботов
+                </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <strong>
+                        Web
+                    </strong>
+
+                    <span>
+                    Создание сайтов
+                </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <strong>
+                        24/7
+                    </strong>
+
+                    <span>
+                    На связи с клиентом
+                </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- КОНТАКТЫ -->
+
+    <section class="contact section" id="contacts">
+
+        <div class="container contact-box">
+
+            <div class="contact-info">
+
+                <div class="section-label">
+                    Есть проект?
+                </div>
+
+                <h2>
+                    Давайте обсудим
+                    ваш проект
+                </h2>
+
+                <p>
+                    Расскажите о своей задаче.
+                    Я изучу её и предложу подходящее решение.
+                </p>
+
+                <div class="contact-direct">
+
+                <span>
+                    Или напишите напрямую:
+                </span>
+
+                    <a href="https://t.me/MadAlex09"
+                       target="_blank">
+
+                        ✈️ Telegram
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <form class="contact-form"
+                  id="contact-form"
+                  method="POST">
+
+                <input
+                        type="text"
+                        id="client-name"
+                        name="name"
+                        placeholder="Ваше имя"
+                        required
+                >
+
+                <input
+                        type="text"
+                        id="client-contact"
+                        name="contact"
+                        placeholder="Telegram или другой контакт"
+                        required
+                >
+
+                <textarea
+                        id="client-message"
+                        name="message"
+                        placeholder="Расскажите, что нужно сделать..."
+                        rows="5"
+                        required
+                ></textarea>
+
+                <button
+                        type="submit"
+                        class="button primary-button">
+
+                    Отправить заявку →
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ПОДВАЛ -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="logo">
+            <span>[</span> MadAlex <span>]</span>
+        </div>
+
+        <p>
+            © 2026 Все права защищены
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<!-- МОДАЛЬНОЕ ОКНО ПРОЕКТА -->
+
+<div class="modal" id="project-modal">
+
+    <div class="modal-content">
+
+        <button class="modal-close" id="close-modal">
+            ×
+        </button>
+
+        <div class="modal-icon">
+            🎮
+        </div>
+
+        <div class="section-label">
+            МОЙ ПРОЕКТ
+        </div>
+
+        <h2>
+            Система бронирования ПК-клуба
+        </h2>
+
+        <p>
+            Telegram-бот, созданный для автоматизации
+            работы компьютерного клуба.
+        </p>
+
+        <h3>
+            Возможности проекта:
+        </h3>
+
+        <ul class="modal-features">
+
+            <li>✓ Регистрация пользователей</li>
+
+            <li>✓ Бронирование обычных компьютеров</li>
+
+            <li>✓ Бронирование VIP-мест</li>
+
+            <li>✓ Выбор даты и времени</li>
+
+            <li>✓ Проверка занятых мест</li>
+
+            <li>✓ Уведомления администратора</li>
+
+            <li>✓ SQLite база данных</li>
+
+        </ul>
+
+        <div class="modal-technologies">
+
+            <span>Python</span>
+
+            <span>Aiogram</span>
+
+            <span>SQLite</span>
+
+            <span>Telegram API</span>
+
+        </div>
+
+        <a href="https://t.me/MadAlex09"
+           target="_blank"
+           class="button primary-button">
+
+            Обсудить похожий проект →
+
+        </a>
+
+    </div>
+
+
+</div>
+
+</body>
+
+</html>
